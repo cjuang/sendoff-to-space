@@ -50,7 +50,7 @@ There is a `lookup` function commented-out, which was a function to look up arti
 Google News API used in Problem Set 9, Mashup. However, I was faced with the challenge of my lookup function returning nothing. I suspect
 it is because some mission names use special characters that the SpaceflightNow website does not use, making it harder to find relevant 
 articles. The code also needs to be modified more so that it does not search for geolocations. The other part of the in-progress code can 
-be found in `application.py`, under the `@app.route("/articles").
+be found in `application.py`, under the `@app.route("/articles")`.
 
 # application.py - write a message
 `@app.route("/write")` uses `POST` and `GET` methods for a form submission. Contents of the form are stored in the SQL table 'messages'. 

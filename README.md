@@ -53,12 +53,12 @@ of code for these ideas commented-out throughout application.py and helpers.py.
 
 # Questions and Answers
 
-###### When will the page reload when the next launch will be?
+##### When will the page reload when the next launch will be?
 The page will refresh the next launch when a user reloads the page. The website is scraped every single time the `index` function is 
 called in `application.py`.
 
-###### What website does the launch information come from?
+##### What website does the launch information come from?
 Currently, the website automatically scrapes data from http://spaceflightnow.com/launch-schedule/ to give you the most current launch. 
 
-###### On the home page, where do the messages come from?
+##### On the home page, where do the messages come from?
 The messages are read from a SQL table named `messages` on a database named `messages`. They are not taken from outside websites.

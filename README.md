@@ -1,4 +1,4 @@
-![Screenshot of webpage](cjuang/sendoff-to-space/screenshot.PNG?raw=true "Main page")
+![Screenshot of webpage](https://github.com/cjuang/sendoff-to-space/blob/master/screenshot.PNG?raw=true "Main page")
 
 # Sendoff to Space
 

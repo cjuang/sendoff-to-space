@@ -1,3 +1,5 @@
+![Screenshot of webpage](cjuang/sendoff-to-space/screenshot.PNG?raw=true "Main page")
+
 # Sendoff to Space
 
 Welcome to Sendoff to Space, a small website that informs visitors of the next launch to space and gives them the opportunity to write 

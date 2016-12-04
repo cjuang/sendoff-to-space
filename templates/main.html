@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    - Send Good Wishes to the Next Launch
+{% endblock %}
+
+{% block main %}
+    <div class="container-fluid">
+        <!-- Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                
+
+            </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <h1><i>Farewell, <b>{{lname}}</b>!</i></h1>
+                <h4>{{lname}} is leaving {{ldate}}<br></h4>
+                <br><b>Launch time:</b> {{ltime}}</br>
+                <p><b>Location:</b> {{lloc}}</p>
+                <br>
+            </div>
+            <div class="col-sm-8">
+                <div class="table-responsive" id="msgtable">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>From</th>
+                                <th>To</th>
+                                <th>Message</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <div id="msgcontent">
+                            {% for row in messages %}
+                            <tr>
+                                <td>{{ row.msg_from }}</td>
+                                <td>{{ row.msg_to }}</td>
+                                <td>{{ row.msg_msg }}</td>
+                                <td>{{ row.msg_date }}</td>
+                            </tr>
+                            {% endfor %}
+                            </div>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <h3>About the Site</h3>
+            </div>
+            <div class="col-sm-9">
+                <br>
+                Sendoff to Space is a small website that informs you when the next launch to space will be, and lets you "write a message" 
+                to the spacecraft that will be launching. All messages are posted on this site for everyone to view. Information about 
+                the launch is from http://spaceflightnow.com/launch-schedule/. Built by Caroline Juang with the help of CS 50 at Harvard.
+            </div>
+        </div>
+
+{% endblock %}

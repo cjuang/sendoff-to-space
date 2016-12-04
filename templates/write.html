@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    - Write Message
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <!-- Title -->
+        <div class="row">
+            <div class="col-sm-10">
+                <h3>Write a message of good wishes to the next launch</h3>
+                <br>
+            </div>
+        </div>
+    </div>
+    <form action="{{ url_for('write') }}" method="post">
+        <fieldset>
+            <!-- Form for filling out a message -->
+            <div class="container">
+                <form>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputfrom" class="col-sm-2 col-form-label">From</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" name="inputfrom" placeholder="Your name here">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputto" class="col-sm-2 col-form-label">To</label>
+                    <div class="col-sm-8">
+                      <input type="text" autofocus class="form-control" name="inputto" placeholder="Mission name (e.g. Curiosity Rover)">
+                    </div>                  
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputmsg" class="col-sm-2 col-form-label">Message:</label>
+                    <div class="col-sm-8">
+                      <textarea type="text" class="form-control" rows="2" name="inputmsg" placeholder="&quot;Bon voyage! Make it to Mars safely, and take lots of pictures.&quot;" autocomplete="off"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="offset-sm-2 col-sm-8">
+                      <div class="form-group">
+                      <button class="btn btn-default" type="submit">Send</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}

@@ -4,8 +4,16 @@ The basis of the website is designed from CS50 Finance, problem set 8. The websi
 It has been designed in Chrome browsers. The "Write a Message" page is mobile-optimized using Bootstrap, but the main page is not. Both 
 pages use Bootstrap for design.
 
-# application.py - index, website scraping
+# Python
+
+## application.py - index, website scraping
 The backend application.py uses Python 3, Flask, and SQL. It also requires the Python libraries `lxml` and `requests`.
+
+A summary of features
+- 'messages' SQL table to hold messages, detailed in `write` in `application.py`
+- a form in `write.html` to enable users to insert messages into 'messages'
+- display of launch information and previously-submitted messages in `main.html`, scraped using `lxml` and `requests` (detailed in `application.py`)
+- other commented-out features
 
 The first part of the code configures `messages.db`, the SQL database used to store the messages that people write on the website to 
 spacecrafts. A commented-out part of code that follows is a method of deleting messages older than 30 days; however, the code did not 
@@ -29,7 +37,7 @@ are loaded and returned along with the launch information.
 
 Credit for website scraping belongs to http://docs.python-guide.org/en/latest/scenarios/scrape/.
 
-# helpers.py
+## helpers.py
 The `satname` function is used to take the satellite name out of a string from SpaceflightNow. When the website is scraped, 
 ```
 tree.xpath('//span[@class="mission"]/text()')
@@ -51,12 +59,20 @@ spacecraft. Upon submission, the contents of the form are appended to the 'messa
 main page, where a message will flash that they have successfully sent a message. They can also view their new message on the table displayed 
 on `main.html`.
 
-# layout.html
+# HTML Templates and CSS
+
+## layout.html
 The main template is mostly adopted from CS50 Finance. The changes made were the Bootstrap theme, changes to the titles displayed, and 
 changes to the main menu links.
 
-# main.html
-The layout for `main.html` is built using Twitter Bootstrap. In the top row, the left-hand side was chosen to display all the information 
+Jinja is used to keep a consistent layout to all the pages. The main menu at the top is detailed in this section, and every other layout is an 
+extension to `layout.html` so all other pages will all have the same main menu at the top.
+
+## main.html
+The layout for `main.html` is built using Twitter Bootstrap. Bootstrap containers are used to make rows and columns on the webpage that 
+helps divide the content into different lengths. 
+
+In the top row, the left-hand side was chosen to display all the information 
 about mission name and mission launch date and time. 
 
 On the right side of the row is the table listing all of the messages made by visitors. 
@@ -69,11 +85,33 @@ messages_history = db.execute("SELECT msg_from, msg_to, msg_msg, msg_date FROM m
 Using `ORDER BY id DESC` orders the entire table in descending order by id number, which is auto-incrementing. This makes the website 
 significantly more user-friendly because people do not need to scroll to reach the most recent messages.
 
-The table has been formatted to have a scrollbar and a fixed height, credits to 
-http://stackoverflow.com/questions/21017769/table-with-fixed-height-and-header-and-colum-width-with-bootstrap-3. 
-Fixed height is necessary so that the rows of the table do not become too long and diminish user-interactivity.
-The scrollbar is also necessary to scroll when a scrollbar exists. 
+To add information to the table, Jinja is used to iterate through each row from the 'messages' SQL table returned from `application.py` 
+and print the row's From, To, Message, and Date Sent. The code used is here:
+```
+<div id="msgcontent">
+{% for row in messages %}
+<tr>
+    <td>{{ row.msg_from }}</td>
+    <td>{{ row.msg_to }}</td>
+    <td>{{ row.msg_msg }}</td>
+    <td>{{ row.msg_date }}</td>
+</tr>
+{% endfor %}
+```
+At the bottom of `main.html`, a small 'About' section is added to explain the purpose of the website.
 
+## write.html
+`write.html` contains the frontend form that is displayed so that users can input their messages into the 'messages' SQL table. The 
+table has labels for each box and an example of what to write in the `placeholder`. When first loading the page, there is `autofocus` 
+on the first input box so users can immediately begin typing. Submitting the form will run the `POST` method of the `write` function in 
+`application.py`, and redirect the user to `main.html`.
 
-Fixed headers and table
-http://stackoverflow.com/questions/21017769/table-with-fixed-height-and-header-and-colum-width-with-bootstrap-3
+## styles.css
+CSS was used minimally to help with aligning text in containers and forms.
+
+The table on `main.html` has been formatted in `styles.css` to have a scrollbar and a fixed height, credits to 
+http://stackoverflow.com/questions/21017769/table-with-fixed-height-and-header-and-colum-width-with-bootstrap-3. Fixed height is 
+necessary so that the rows of the table do not become too long and diminish user-interactivity.
+
+# Further Questions
+Send any questions to Caroline Juang at carolinejuang@gmail.com.

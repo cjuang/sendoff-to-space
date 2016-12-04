@@ -3,7 +3,7 @@
 Welcome to Sendoff to Space, a small website that informs visitors of the next launch to space and gives them the opportunity to write 
 a small message to the spacecraft. All messages are posted on this site for everyone to view.
 
-The backend of the website is coded in Python and SQL. The frontend uses HTML, CSS, and Jinja. Twitter Bootstrap was used for formatting.
+The backend of the website is coded in Python, SQL, and Flask. The frontend uses HTML, CSS, and Jinja. Twitter Bootstrap was used for formatting.
 
 The code is mostly written by Caroline Juang, 2016 for her Intro to Computer Science class at Harvard University. Please see the design document for further details.
 

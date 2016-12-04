@@ -30,12 +30,12 @@ Session(app)
 # configure CS50 Library to use SQLite database
 db = SQL("sqlite:///messages.db")
 
-# delete messages older than 30 days on the server
-# if db.execute("SELECT * FROM messages") != None & db.execute("DELETE FROM messages WHERE msg_date < GetDate() - 30") != None:
-#     db.execute("DELETE FROM messages WHERE Date < GetDate(Date) - 30")
-
 @app.route("/")
 def index():
+    # delete messages older than 30 days on the server
+    # if db.execute("SELECT * FROM messages") != None & db.execute("DELETE FROM messages WHERE msg_date < GetDate() - 30") != None:
+    #     db.execute("DELETE FROM messages WHERE msg_date < GetDate(msg_date) - 30")
+    
     # scrape HTML from SpaceflightNow website
     page = requests.get('http://spaceflightnow.com/launch-schedule/')
     tree = html.fromstring(page.content)

@@ -24,7 +24,7 @@ sudo pip3 install requests
 ```
 # Running the Website in CS50 IDE
 
-Change directories if necessary by running `cd final` in the command prompt.
+Change directories if necessary by running `cd (directoryname)` in the command prompt, where (directoryname) is the folder containing all of the files.
 
 After installing the required libraries, run `flask run` in the command prompt to view the Web Server.
 

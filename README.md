@@ -5,6 +5,8 @@ a small message to the spacecraft. All messages are posted on this site for ever
 
 The backend of the website is coded in Python and SQL. The frontend uses HTML, CSS, and Jinja. Twitter Bootstrap was used for formatting.
 
+The code is mostly written by Caroline Juang, 2016 for her Intro to Computer Science class at Harvard University. Please see the design document for further details.
+
 # Vision
 In 2015 alone, a total of 87 orbital rockets were launched worldwide into space. This number is likely to continue to grow in both 
 the public and private sectors as it has been in the past several years as more countries enter the space market. On average there 

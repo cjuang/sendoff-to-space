@@ -5,8 +5,6 @@ a small message to the spacecraft. All messages are posted on this site for ever
 
 The backend of the website is coded in Python, SQL, and Flask. The frontend uses HTML, CSS, and Jinja. Twitter Bootstrap was used for formatting.
 
-The code is mostly written by Caroline Juang, 2016 for her Intro to Computer Science class at Harvard University. Please see the design document for further details.
-
 # Vision
 In 2015 alone, a total of 87 orbital rockets were launched worldwide into space. This number is likely to continue to grow in both 
 the public and private sectors as it has been in the past several years as more countries enter the space market. On average there 
@@ -16,6 +14,11 @@ themselves directly* to the spacecrafts that are flying up.
 
 *the spacecrafts will not actually receive the message, unless they visit this website
 
+# Website Features
+- View the date, name of mission, launch time, and launch location of the next mission to space
+- Write a message to the departing spacecraft
+- View all messages written to the spacecraft and to previous launches
+
 # Requirements
 When running this website, the lxml and requests libraries are necessary. Use the following commands to install:
 ```
@@ -24,7 +27,8 @@ sudo pip3 install requests
 ```
 # Running the Website in CS50 IDE
 
-Change directories if necessary by running `cd (directoryname)` in the command prompt, where (directoryname) is the folder containing all of the files.
+Change directories if necessary by running `cd (directoryname)` in the command prompt, where (directoryname) is the folder containing 
+all of the files.
 
 After installing the required libraries, run `flask run` in the command prompt to view the Web Server.
 
@@ -32,9 +36,6 @@ See the SQL table of written notes from users by running `phpliteadmin messages.
 
 The website should be set-up and available for use. Try inputting a message by clicking the "Write a Message" tab in the menu bar. When 
 you click on the "Send" button, the website will redirect you to the main page. Your new message will appear at the top of the table. 
-The website automatically scrapes data from http://spaceflightnow.com/launch-schedule/ to give you the most current launch.
-
-
 
 # Features to Implement in the Future to Strengthen the Website
 Below are ideas that I would have liked to implement for this project, but did not due to time constraints. You can find some beginnings 
@@ -45,3 +46,15 @@ of code for these ideas commented-out throughout application.py and helpers.py.
 - Delete messages older than 30 days from the SQL table
 - Google newsfeed to alert visitors about current launch information
 - Wikipedia summary of the launch
+
+# Questions and Answers
+
+## When will the page reload when the next launch will be?
+The page will refresh the next launch when a user reloads the page. The website is scraped every single time the `index` function is 
+called in `application.py`.
+
+## What website does the launch information come from?
+Currently, the website automatically scrapes data from http://spaceflightnow.com/launch-schedule/ to give you the most current launch. 
+
+## On the home page, where do the messages come from?
+The messages are read from a SQL table named `messages` on a database named `messages`. They are not taken from outside websites.

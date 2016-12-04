@@ -39,6 +39,8 @@ See the SQL table of written notes from users by running `phpliteadmin messages.
 The website should be set-up and available for use. Try inputting a message by clicking the "Write a Message" tab in the menu bar. When 
 you click on the "Send" button, the website will redirect you to the main page. Your new message will appear at the top of the table. 
 
+![Screenshot of webpage](https://github.com/cjuang/sendoff-to-space/blob/master/screenshot2.PNG?raw=true "Write a Message")
+
 # Features to Implement in the Future to Strengthen the Website
 Below are ideas that I would have liked to implement for this project, but did not due to time constraints. You can find some beginnings 
 of code for these ideas commented-out throughout application.py and helpers.py.

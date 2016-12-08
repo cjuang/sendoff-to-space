@@ -9,6 +9,8 @@ The backend of the website is coded in Python, SQL, and Flask. The frontend uses
 
 This website was created by Caroline Juang for an Intro to Computer Programming class at Harvard University, December 2016. Send all questions to carolinejuang@gmail.com.
 
+Video link: https://youtu.be/tpi-F1knv84
+
 # Vision
 In 2015 alone, a total of 87 orbital rockets were launched worldwide into space. This number is likely to continue to grow in both 
 the public and private sectors as it has been in the past several years as more countries enter the space market. On average there 
